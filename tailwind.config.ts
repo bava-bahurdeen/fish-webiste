@@ -1,14 +1,12 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    
-    
     container: {
       center: true,
       padding: {
@@ -21,14 +19,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-      primary:"#023E8A",
-      nav_bg:"#48CAE4",
-      button_bg:"#03045E",
-      body_bg:"#90E0EF",
-      shade_4:"#0096C7"
-},
+        primary: '#023E8A',
+        nav_bg: '#48CAE4',
+        button_bg: '#03045E',
+        body_bg: '#90E0EF',
+        shade_4: '#0096C7',
+        shade_3: '#0077b6',
+        shade_9: '#CAF0F8',
+      },
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

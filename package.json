@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "prepare": "husky"
   },
   "dependencies": {
     "framer-motion": "^11.7.0",
