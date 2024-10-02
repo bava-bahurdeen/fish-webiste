@@ -6,31 +6,20 @@ import service_bg from '@/app/assets/images/ship 1.png'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Each } from './utils/Each'
-import { ServiceCard } from './components/homedata'
+import { ServiceCard, GlobalData } from './components/homedata'
 import about from '@/app/assets/images/about.png'
 import world from '@/app/assets/images/world.png'
 const Home: React.FC = () => {
   const [isHover, setisHover] = useState<boolean>(false)
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-shade_9">
       <section className=" container  md:h-screen mx-auto flex   flex-col-reverse xl:flex-row items-center mt-24 lg:mt-0 ">
         <div className="w-full h-full xl:h-fit space-y-8  md:text-center xl:text-start overflow-hidden">
-          <motion.h1
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.78 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-primary font-bold text-2xl md:text-4xl xl:text-5xl"
-          >
+          <motion.h1 className="text-primary font-bold text-2xl md:text-4xl xl:text-5xl">
             Premium Quality Fish Export Services Worldwide
           </motion.h1>
-          <motion.p
-            initial={{ x: '-100%' }}
-            transition={{ duration: 0.65 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.p>
             Welcome to [Your Company Name], your trusted source for fresh and
             high-quality fish exports. We specialize in delivering premium fish
             products across the globe, ensuring sustainability and top-notch
@@ -76,12 +65,8 @@ const Home: React.FC = () => {
               of={ServiceCard}
               render={({ id, Img, head, lead }) => (
                 <motion.li
-                  initial={{ opacity: 0, scale: 1.2 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.75 }}
-                  viewport={{ once: true }}
                   key={id}
-                  className="bg-body_bg rounded-xl shadow-2xl shadow-slate-400 cursor-pointer "
+                  className="bg-body_bg rounded-xl  cursor-pointer "
                 >
                   <Image src={Img} alt="img" className="rounded-t-xl" />
                   <div className="grid gap-y-1 md:place-items-center p-2 md:p-1 xl:p-6">
@@ -126,9 +111,43 @@ const Home: React.FC = () => {
       </section>
 
       <section
-        className="bg-cover bg-center bg-no-repeat bg-primary text-white    h-full p-4 xl:p-20"
+        className="bg-cover bg-center bg-no-repeat bg-primary text-white grid place-items-center    md:h-screen p-4 xl:p-20 "
         style={{ backgroundImage: `url('${world.src}')` }}
-      ></section>
+      >
+        <div className="container mx-auto text-center grid place-items-center space-y-8 p-4">
+          <h2 className="text-[#ADE8F4] font-bold text-2xl  md:text-5xl">
+            Global Shipping & Logistics
+          </h2>
+          <p className="text-sm xl:text-lg font-semibold xl:w-10/12">
+            With an advanced logistics network, we ensure efficient and timely
+            delivery of our fish exports to international markets. Our team is
+            experienced in handling all aspects of transportation, including
+            compliance with international health and safety standards, customs
+            clearance, and temperature-controlled shipping to maintain product
+            quality.
+          </p>
+
+          <ul className="flex flex-col md:flex-row items-center justify-center gap-y-8 gap-x-10">
+            <Each
+              of={GlobalData}
+              render={({ id, Img, head, lead }) => (
+                <li
+                  key={id}
+                  className={`${id == 2 ? ' md:translate-y-28' : 'translate-y-0'} flex flex-col gap-y-1 xl:gap-y-4 items-center bg-white w-52 h-52 xl:w-80 xl:h-80 rounded-3xl  p-8 md:p-2  md:py-8 lg:py-10`}
+                >
+                  <div className="bg-shade_3 p-2 rounded-xl">
+                    <Image src={Img} alt="Img" className="size-20 xl:size-36" />
+                  </div>
+                  <h3 className="md:text-2xl xl:text-3xl text-black font-bold ">
+                    {head}
+                  </h3>
+                  <p className="text-[#00B4D8] xl:text-lg">{lead}</p>
+                </li>
+              )}
+            />
+          </ul>
+        </div>
+      </section>
     </main>
   )
 }
