@@ -29,27 +29,6 @@ export const ServiceCard: Cardtype[] = [
     head: 'export',
     lead: 'Looking to source the best seafood from around the world? Our internat exotic catches from trusted sources across the globe, and experience the finest the ocean has to offer.',
   },
-
-  {
-    id: 4,
-    Img: fish1,
-    head: 'export',
-    lead: 'Looking to source the best seafood from around the world? Our internat exotic catches from trusted sources across the globe, and experience the finest the ocean has to offer.',
-  },
-
-  {
-    id: 5,
-    Img: fish1,
-    head: 'export',
-    lead: 'Looking to source the best seafood from around the world? Our internat exotic catches from trusted sources across the globe, and experience the finest the ocean has to offer.',
-  },
-
-  {
-    id: 6,
-    Img: fish1,
-    head: 'export',
-    lead: 'Looking to source the best seafood from around the world? Our internat exotic catches from trusted sources across the globe, and experience the finest the ocean has to offer.',
-  },
 ]
 
 export const GlobalData: Cardtype[] = [

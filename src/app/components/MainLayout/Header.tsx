@@ -9,19 +9,21 @@ import { Each } from '@/app/utils/Each'
 const Header: React.FC = () => {
   const [isOpen, setisOpen] = useState<boolean>(false)
   return (
-    <header className="  fixed top-0  z-50  right-0 left-0 container mx-auto overflow-hidden">
-      <nav className=" w-full  flex justify-between items-center bg-nav_bg p-4 px-8 mt-10 rounded-xl">
+    <header className="  container mx-auto   overflow-hidden">
+      <nav className="w-full  flex justify-between items-center bg-nav_bg p-4 px-8 mt-10 rounded-xl">
         <h2>Logo</h2>
         <ul className="flex items-center gap-x-10 ">
           <Each
             of={HeaderData}
-            render={({ id, link, value }) => (
+            render={({ id, link, Icon, value }) => (
               <li key={id} className="relative overflow-hidden ">
                 <Link
-                  className="hidden xl:block text-lg font-semibold text-primary hover:text-black transition-all duration-100"
+                  className="hidden xl:block text-lg  font-semibold text-primary hover:text-black transition-all duration-100"
                   href={link}
                 >
-                  {value}
+                  <span className="flex items-center gap-x-2">
+                    <Icon /> {value}
+                  </span>
                 </Link>
               </li>
             )}
